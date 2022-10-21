@@ -1,0 +1,43 @@
+
+
+<!--Formulario listado de Personas-->
+
+<div class="conteiner">
+  <div class="col">
+    <h3>{{titulo}}</h3>
+  </div>
+  <hr><!--esto es una linea horizontal-->
+  <form class="row">
+    <div class="col-md-2">
+      <label for="nombre"></label>
+      <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" aria-describedby="helpId"
+       class="form-control" [(ngModel)]="nombreInput">
+    </div>
+    <div class="col-md-2">
+      <label for="apellido"></label>
+      <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido" aria-describedby="helpId"
+       class="form-control" [(ngModel)]="apellidoInput">
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-primary" (click)="agregarPersona()">
+        Agregar
+      </button>
+    </div>
+
+  </form>
+  <!--fin de formulario-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div *ngFor="let persona of personas; let i=index"> <!-- Iteramos-->
+          {{i+1}} {{persona.nombre}} {{persona.apellido}}<!--Accedemos a los datos para cada iteracion-->
+        </div>
+   
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+
+
